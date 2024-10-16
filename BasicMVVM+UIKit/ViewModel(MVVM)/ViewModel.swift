@@ -5,16 +5,16 @@
 //  Created by FIX PRICE on 10/16/24.
 //
 
-import Foundation
+import Combine
 
 final class CountViewModel: ObservableObject {
-    @Published private(set) var count: Int = 0
+    @Published private(set) var model = Model()
     
     func increaseCount() {
-        count += 1
+        model.increaseCount()
     }
     
     func decreaseCount() {
-        count -= 1
+        model.decreaseCount()
     }
 }

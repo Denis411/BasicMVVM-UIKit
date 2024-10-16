@@ -29,10 +29,10 @@ final class ViewController: UIViewController {
     
     private func bind() {
         viewModel
-            .$count
+            .$model
             .receive(on: DispatchQueue.main)
             .sink { [weak self] newValue in
-                self?.internalView.setCount(String(newValue))
+                self?.internalView.setCount(String(newValue.count))
         }
         .store(in: &disposedBag)
     }
